@@ -16,7 +16,6 @@ public class Account {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    @OneToMany
     private String email;
 
     @Column(unique = true, nullable = false)
