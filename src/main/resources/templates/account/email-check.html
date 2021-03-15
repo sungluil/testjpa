@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${error}">
+    이메일 확인바랍니다.<span th:text="${error}"></span>
+</div>
+<div th:if="${error == null}">
+    환영합니다.<span th:text="${count}"></span>번째 <span th:text="${nickname}"></span> 회원님
+</div>
+</body>
+</html>
