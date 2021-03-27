@@ -22,4 +22,8 @@ public class Posts {
 
     private String author;
 
+    public void update(PostsDTO postsDTO) {
+        this.title = postsDTO.getTitle();
+        this.content = postsDTO.getContent();
+    }
 }

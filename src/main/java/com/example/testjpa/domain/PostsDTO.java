@@ -19,4 +19,10 @@ public class PostsDTO {
                 ", author='" + author + '\'' +
                 '}';
     }
+
+    public PostsDTO(Posts posts) {
+        this.title = posts.getTitle();
+        this.content = posts.getContent();
+        this.author = posts.getContent();
+    }
 }

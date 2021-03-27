@@ -23,4 +23,20 @@ public class PostsService {
                 .author(postsDTO.getAuthor())
                 .build();
     }
+
+    public Long update(Long id, PostsDTO postsDTO) {
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다 id = " + id));
+
+        posts.update(postsDTO);
+
+        return id;
+    }
+
+    public PostsDTO findById(Long id) {
+        Posts entity = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+
+        return new PostsDTO(entity);
+    }
 }
