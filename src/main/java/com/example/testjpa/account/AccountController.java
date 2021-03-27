@@ -81,5 +81,12 @@ public class AccountController {
         return "account/profile";
     }
 
+    @GetMapping("/test")
+    public String test(Model model) {
+        model.addAttribute("test","테스트코드");
+        model.addAttribute("newTest","new 테스트코드");
+        return "test";
+    }
+
 
 }
