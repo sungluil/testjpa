@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/date}" method="post" th:object="${dateDTO}">
+    <input type="date" th:field="*{joinedAt}">
+    <button type="submit">검색</button>
+</form>
+
+<table th:if="${list != null}">
+    <thead>
+        <tr>
+            <td>닉네임</td>
+            <td>이메일</td>
+            <td>가입날짜</td>
+        </tr>
+    </thead>
+    <tbody th:each="dateList : ${list}">
+        <tr>
+            <td th:text="${dateList.getNickname()}"></td>
+            <td th:text="${dateList.getEmail()}"></td>
+            <td th:text="${dateList.getJoinedAt()}"></td>
+        </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
