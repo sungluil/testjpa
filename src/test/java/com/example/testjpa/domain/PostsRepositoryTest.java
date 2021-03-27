@@ -21,7 +21,8 @@ class PostsRepositoryTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private final PostsRepository postsRepository;
+    @Autowired
+    private PostsRepository postsRepository;
 
     @DisplayName("저장 테스트")
     @Test

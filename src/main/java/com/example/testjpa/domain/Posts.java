@@ -1,9 +1,6 @@
 package com.example.testjpa.domain;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +10,7 @@ import javax.persistence.Id;
 @Entity
 @Getter @NoArgsConstructor
 @EqualsAndHashCode(of = "id") @Builder
+@AllArgsConstructor
 public class Posts {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
